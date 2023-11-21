@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Item: Identifiable, Decodable {
+    var id = UUID()
+    let name: String
+}

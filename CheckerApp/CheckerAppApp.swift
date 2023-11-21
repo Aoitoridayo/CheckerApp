@@ -11,7 +11,8 @@ import SwiftUI
 struct CheckerAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environmentObject(IventData())
         }
     }
 }

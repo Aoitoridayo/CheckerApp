@@ -17,10 +17,7 @@ struct ExecutionView: View {
         } else {
             List {
                 ForEach(iventData.ivents) { ivent in
-                    VStack {
-                        Text(ivent.title)
-                    }
-                    
+                    ExecutionListRow(ivent: ivent)
                 }
             }
             .listStyle(InsetListStyle())

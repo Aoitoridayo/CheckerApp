@@ -7,18 +7,57 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
+    
+    enum Tabs: String, CaseIterable, Identifiable {
+        case create = "イベント作成"
+        case execution = "イベント実行"
+        case setting = "設定"
+        
+        var id: Self { self }
+    }
+    
+    @State private var navigationTitle: String = Tabs.execution.rawValue
+    @State private var selectionTab: Tabs = .execution
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            TabView(selection: $selectionTab) {
+                ExecutionView()
+                    .tabItem({
+                        VStack {
+                            Image(systemName: "play.circle")
+                            Text("実行")
+                        }
+                    })
+                    .tag(Tabs.execution)
+                
+                CreateIventView()
+                    .tabItem({
+                        Image(systemName: "note.text")
+                        Text("作成")
+                    })
+                    .tag(Tabs.create)
+                
+                SettingView()
+                    .tabItem({
+                        VStack {
+                            Image(systemName: "gearshape")
+                            Text("設定")
+                        }
+                    })
+                    .tag(Tabs.setting)
+            }
+            .navigationTitle(navigationTitle)
+            .navigationBarTitleDisplayMode(.inline)
+            .onChange(of: selectionTab, {
+                navigationTitle = selectionTab.rawValue
+            })
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    MainView()
+        .environmentObject(IventData())
 }

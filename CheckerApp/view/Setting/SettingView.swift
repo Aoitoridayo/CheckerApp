@@ -9,7 +9,25 @@ import SwiftUI
 
 struct SettingView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Section("評価") {
+                Button(action: {
+                    
+                }) {
+                    Text("アプリをシェア")
+                }
+            }
+            Section("情報") {
+                Text("利用規約")
+                HStack {
+                    Text("バージョン")
+                    Spacer()
+                    Text("1.0")
+                }
+            }
+            Text("データを削除")
+                .foregroundStyle(Color.red)
+        }
     }
 }
 
