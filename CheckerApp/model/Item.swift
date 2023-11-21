@@ -10,4 +10,5 @@ import Foundation
 struct Item: Identifiable, Codable {
     var id = UUID().uuidString
     let name: String
+    var isCheck = false
 }

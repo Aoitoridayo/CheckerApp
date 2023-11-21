@@ -8,25 +8,16 @@
 import Foundation
 
 class IventData: ObservableObject {
-    @Published var ivents: [Ivent] = [
-        //        Ivent(title: "バイトへ行く", items: [
-        //            Item(name: "名札"),
-        //            Item(name: "制服"),
-        //            Item(name: "免許書")
-        //        ]),
-        //        Ivent(title: "学校へ行く", items: [
-        //            Item(name: "筆記用具"),
-        //            Item(name: "学生証")
-        //        ])
-    ]
+    @Published var ivents: [Ivent] = []
     @Published var isCreateIventView = false
-    @Published var isExecution = false
+
+    let userDefautsManager = UserDefaultsManager.shared
     
     public func didTapIventPlusButton() {
         self.isCreateIventView = true
     }
     public func didTapExecutionButton() {
-        isExecution = true
+
     }
     public func didTapIventDeleteButton(ivent: Ivent) {
         guard let index = ivents.firstIndex(where: { $0.id == ivent.id }) else {
@@ -36,10 +27,28 @@ class IventData: ObservableObject {
     }
     public func didTapSaveButton(ivent: Ivent) {
         self.ivents.append(ivent)
+        self.saveData()
         self.isCreateIventView = false
     }
     public func didTapCancelButton() {
         self.isCreateIventView = false
     }
-    private func saveData() {}
+    public func onAppear() {
+        do {
+            let result = try userDefautsManager.get(key: "key")
+            self.ivents = result
+        } catch {
+            let error = error as? UserDefaultsError ?? UserDefaultsError.unknownError
+            print(error)
+        }
+    }
+    
+    private func saveData() {
+        do {
+            try userDefautsManager.set(ivents: ivents, key: "key")
+        } catch {
+            let error = error as? UserDefaultsError ?? UserDefaultsError.unknownError
+            print(error)
+        }
+    }
 }

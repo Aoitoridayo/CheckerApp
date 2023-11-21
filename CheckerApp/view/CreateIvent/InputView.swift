@@ -27,10 +27,15 @@ struct InputView: View {
                     ForEach(items) { item in
                         Text(item.name)
                     }
-                    Button(action: {
-                        self.isInputItem = true
-                    }) {
-                        Image(systemName: "plus.circle")
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            self.isInputItem = true
+                        }) {
+                            Image(systemName: "plus")
+                                .imageScale(.large)
+                    }
+                        Spacer()
                     }
                 }
             }

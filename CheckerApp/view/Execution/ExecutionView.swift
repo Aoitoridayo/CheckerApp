@@ -17,7 +17,9 @@ struct ExecutionView: View {
         } else {
             List {
                 ForEach(iventData.ivents) { ivent in
-                    ExecutionListRow(ivent: ivent)
+                    ExecutionListRow(ivent: ivent, active: {
+                        iventData.didTapExecutionButton()
+                    })
                 }
             }
             .listStyle(InsetListStyle())

@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct ActiveListRow: View {
+    @Binding var item: Item
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(item.name)
+            Spacer()
+            Button(action: {
+                item.isCheck.toggle()
+            }) {
+                Image(systemName: item.isCheck
+                      ? "checkmark.circle"
+                      : "circle"
+                )
+                .font(.title)
+            }
+        }
+    }
+}
+
+struct SamplePreview: View {
+    @State var item = Item(name: "筆記具")
+    
+    var body: some View {
+        ActiveListRow(item: $item)
     }
 }
 
 #Preview {
-    ActiveListRow()
+    SamplePreview()
 }

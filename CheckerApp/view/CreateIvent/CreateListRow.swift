@@ -17,17 +17,16 @@ struct CreateListRow: View {
                     .font(.title2)
                     .padding()
                 HStack {
-                    ForEach(ivent.items) { item in
-                        HStack {
-                            Image(systemName: "circle.fill")
-                                .font(.caption2)
-                                .foregroundStyle(Color.blue)
-                            Text(item.name)
-                        }
-                        .padding(.leading)
-                        .opacity(0.5)
+                    HStack {
+                        Image(systemName: "circle.fill")
+                            .font(.caption2)
+                            .foregroundStyle(Color.blue)
+                        Text(ivent.items[0].name)
+                        Text("など")
                     }
                 }
+                .padding(.leading)
+                .opacity(0.5)
             }
             Spacer()
         }

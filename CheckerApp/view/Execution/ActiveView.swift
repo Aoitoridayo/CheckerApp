@@ -8,11 +8,52 @@
 import SwiftUI
 
 struct ActiveView: View {
+    @State var items: [Item]
+    
+    @State private var isAlert = false
+    @State private var isGood = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                ForEach($items) { item in
+                    ActiveListRow(item: item)
+                }
+                Button(action: {
+                    self.checkItem()
+                }) {
+                    HStack {
+                        Spacer()
+                        Text("準備完了")
+                        Spacer()
+                    }
+                }
+            }
+            .navigationDestination(isPresented: $isGood, destination: {
+                RewardScreen()
+            })
+        }
+        .alert("エラー", isPresented: $isAlert) {
+            Button("確認") {
+                        isAlert = false
+                    }
+                } message: {
+                    Text("確認してない項目があります")
+                }
+    }
+    private func checkItem() {
+        for item in items {
+            if item.isCheck == false {
+                isAlert = true
+            }
+        }
+        isGood = true
     }
 }
 
 #Preview {
-    ActiveView()
+    ActiveView(items: [
+        Item(name: "免許証"),
+        Item(name: "筆記用具")
+    ])
 }

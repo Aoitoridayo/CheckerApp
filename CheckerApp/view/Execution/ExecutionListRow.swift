@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ExecutionListRow: View {
     @State var ivent: Ivent
+    @State private var isExecuit = false
+    let active: () -> Void
     var body: some View {
         HStack {
             Spacer()
@@ -19,7 +21,8 @@ struct ExecutionListRow: View {
                 Spacer()
                 VStack {
                     Button(action: {
-                        
+                        active()
+                        isExecuit = true
                     }) {
                         VStack {
                             Image(systemName: "play.rectangle")
@@ -32,12 +35,22 @@ struct ExecutionListRow: View {
             }
             Spacer()
         }
+        .sheet(isPresented: $isExecuit) {
+            ActiveView(items: ivent.items)
+        }
+    }
+}
+
+struct Preview: View {
+    @State var bool = false
+    var body: some View {
+        ExecutionListRow(ivent: Ivent(title: "バイト", items: [
+            Item(name: "制服"),
+            Item(name: "免許証")
+        ]), active: {})
     }
 }
 
 #Preview {
-    ExecutionListRow(ivent: Ivent(title: "バイト", items: [
-        Item(name: "制服"),
-        Item(name: "免許証")
-    ]))
+    Preview()
 }

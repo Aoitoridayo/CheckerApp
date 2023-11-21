@@ -17,6 +17,7 @@ struct MainView: View {
         var id: Self { self }
     }
     
+    @EnvironmentObject var iventData: IventData
     @State private var navigationTitle: String = Tabs.execution.rawValue
     @State private var selectionTab: Tabs = .execution
     
@@ -54,6 +55,9 @@ struct MainView: View {
                 navigationTitle = selectionTab.rawValue
             })
         }
+        .onAppear(perform: {
+            iventData.onAppear()
+        })
     }
 }
 
