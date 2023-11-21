@@ -60,6 +60,7 @@ struct InputView: View {
             Button(action: {
                 addItems()
                 self.isInputItem = false
+                self.newItem = ""
             }) {
                 Text("確定")
             }

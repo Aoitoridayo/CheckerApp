@@ -20,6 +20,10 @@
 		8B56CEF12B0C5E28008531A6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56CEF02B0C5E28008531A6 /* Item.swift */; };
 		8B56CEF62B0C61B3008531A6 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56CEF52B0C61B2008531A6 /* InputView.swift */; };
 		8B56CEF82B0C871E008531A6 /* ExecutionListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56CEF72B0C871E008531A6 /* ExecutionListRow.swift */; };
+		8B56CEFA2B0C8FD3008531A6 /* CreateListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56CEF92B0C8FD3008531A6 /* CreateListRow.swift */; };
+		8B56CF1D2B0CA483008531A6 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56CF1C2B0CA483008531A6 /* UserDefaultsManager.swift */; };
+		8B56CF202B0CA5B4008531A6 /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56CF1F2B0CA5B4008531A6 /* InputError.swift */; };
+		8B56CF222B0CA609008531A6 /* UserDefaultsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56CF212B0CA609008531A6 /* UserDefaultsError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		8B56CEF02B0C5E28008531A6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		8B56CEF52B0C61B2008531A6 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		8B56CEF72B0C871E008531A6 /* ExecutionListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionListRow.swift; sourceTree = "<group>"; };
+		8B56CEF92B0C8FD3008531A6 /* CreateListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListRow.swift; sourceTree = "<group>"; };
+		8B56CF1C2B0CA483008531A6 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		8B56CF1F2B0CA5B4008531A6 /* InputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputError.swift; sourceTree = "<group>"; };
+		8B56CF212B0CA609008531A6 /* UserDefaultsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +98,10 @@
 		8B56CEE12B0C5963008531A6 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				8B56CF1E2B0CA59E008531A6 /* Error */,
 				8B56CEEE2B0C5E19008531A6 /* Ivent.swift */,
 				8B56CEF02B0C5E28008531A6 /* Item.swift */,
+				8B56CF1C2B0CA483008531A6 /* UserDefaultsManager.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -130,6 +140,7 @@
 				8B56CEE42B0C5A12008531A6 /* PlusButton.swift */,
 				8B56CEE82B0C5ADA008531A6 /* CreateIventView.swift */,
 				8B56CEF52B0C61B2008531A6 /* InputView.swift */,
+				8B56CEF92B0C8FD3008531A6 /* CreateListRow.swift */,
 			);
 			path = CreateIvent;
 			sourceTree = "<group>";
@@ -140,6 +151,15 @@
 				8B56CEEA2B0C5AF8008531A6 /* SettingView.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		8B56CF1E2B0CA59E008531A6 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				8B56CF1F2B0CA5B4008531A6 /* InputError.swift */,
+				8B56CF212B0CA609008531A6 /* UserDefaultsError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,8 +233,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B56CED62B0C5946008531A6 /* MainView.swift in Sources */,
+				8B56CF202B0CA5B4008531A6 /* InputError.swift in Sources */,
+				8B56CF222B0CA609008531A6 /* UserDefaultsError.swift in Sources */,
 				8B56CEF12B0C5E28008531A6 /* Item.swift in Sources */,
 				8B56CEE92B0C5ADA008531A6 /* CreateIventView.swift in Sources */,
+				8B56CF1D2B0CA483008531A6 /* UserDefaultsManager.swift in Sources */,
 				8B56CEF82B0C871E008531A6 /* ExecutionListRow.swift in Sources */,
 				8B56CEED2B0C5DE8008531A6 /* IventData.swift in Sources */,
 				8B56CEE72B0C5AAE008531A6 /* ExecutionView.swift in Sources */,
@@ -222,6 +245,7 @@
 				8B56CEEB2B0C5AF8008531A6 /* SettingView.swift in Sources */,
 				8B56CEF62B0C61B3008531A6 /* InputView.swift in Sources */,
 				8B56CED42B0C5946008531A6 /* CheckerAppApp.swift in Sources */,
+				8B56CEFA2B0C8FD3008531A6 /* CreateListRow.swift in Sources */,
 				8B56CEE52B0C5A12008531A6 /* PlusButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

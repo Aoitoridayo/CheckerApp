@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Ivent: Identifiable, Decodable {
+struct Ivent: Identifiable, Codable {
     let title: String
     let items: [Item]
     

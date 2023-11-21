@@ -8,11 +8,35 @@
 import SwiftUI
 
 struct CreateListRow: View {
+    @State var ivent: Ivent
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Spacer()
+            VStack {
+                Text(ivent.title)
+                    .font(.title2)
+                    .padding()
+                HStack {
+                    ForEach(ivent.items) { item in
+                        HStack {
+                            Image(systemName: "circle.fill")
+                                .font(.caption2)
+                                .foregroundStyle(Color.blue)
+                            Text(item.name)
+                        }
+                        .padding(.leading)
+                        .opacity(0.5)
+                    }
+                }
+            }
+            Spacer()
+        }
     }
 }
 
 #Preview {
-    CreateListRow()
+    CreateListRow(ivent: Ivent(title: "学校へ行く", items: [
+        Item(name: "学生証"),
+        Item(name: "筆記用具")
+    ]))
 }
