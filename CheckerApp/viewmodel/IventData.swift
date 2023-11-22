@@ -19,6 +19,9 @@ class IventData: ObservableObject {
     public func didTapExecutionButton() {
 
     }
+    public func didTapDeleteButton() {
+        self.ivents = []
+    }
     public func didTapIventDeleteButton(ivent: Ivent) {
         guard let index = ivents.firstIndex(where: { $0.id == ivent.id }) else {
             return

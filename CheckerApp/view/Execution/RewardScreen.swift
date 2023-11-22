@@ -9,7 +9,10 @@ import SwiftUI
 
 struct RewardScreen: View {
     var body: some View {
-        Text("ナイス")
+        NavigationStack {
+            LottieView(name: "RewardScreen")
+                .navigationTitle("いってらっしゃい！")
+        }
     }
 }
 
