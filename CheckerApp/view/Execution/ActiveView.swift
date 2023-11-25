@@ -45,6 +45,7 @@ struct ActiveView: View {
         for item in items {
             if item.isCheck == false {
                 isAlert = true
+                return
             }
         }
         isGood = true

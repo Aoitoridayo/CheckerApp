@@ -16,9 +16,9 @@ enum InputError: Error {
         switch self {
             
         case .emptyTitle:
-            return "タイトル未入力"
+            return "タイトルが未入力です"
         case .emptyItem:
-            return "アイテム未入力"
+            return "アイテムが未入力です"
         case .unknown:
             return "不明なエラー"
         }

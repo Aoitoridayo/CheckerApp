@@ -21,12 +21,14 @@ class IventData: ObservableObject {
     }
     public func didTapDeleteButton() {
         self.ivents = []
+        self.saveData()
     }
     public func didTapIventDeleteButton(ivent: Ivent) {
         guard let index = ivents.firstIndex(where: { $0.id == ivent.id }) else {
             return
         }
         self.ivents.remove(at: index)
+        self.saveData()
     }
     public func didTapSaveButton(ivent: Ivent) {
         self.ivents.append(ivent)

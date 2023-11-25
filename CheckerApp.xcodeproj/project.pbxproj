@@ -28,11 +28,11 @@
 		8B56CF262B0CB9D1008531A6 /* ActiveListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56CF252B0CB9D1008531A6 /* ActiveListRow.swift */; };
 		8B60F3842B0D70D200F7F3B7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8B60F3832B0D70D200F7F3B7 /* Lottie */; };
 		8B60F3872B0D70FA00F7F3B7 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B60F3862B0D70FA00F7F3B7 /* LottieView.swift */; };
-		8B60F3892B0D715300F7F3B7 /* LaunchScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B60F3882B0D715300F7F3B7 /* LaunchScreen.json */; };
-		8B60F38D2B0D732200F7F3B7 /* RewardScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B60F38C2B0D732200F7F3B7 /* RewardScreen.json */; };
 		8B60F38F2B0D741600F7F3B7 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B60F38E2B0D741600F7F3B7 /* ShareView.swift */; };
 		8B60F3912B0D758700F7F3B7 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B60F3902B0D758700F7F3B7 /* TermsView.swift */; };
 		8B9515F92B0CF3C500ECBE5C /* RewardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9515F82B0CF3C500ECBE5C /* RewardScreen.swift */; };
+		8BCEC26D2B11DE5600AB3421 /* LaunchScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BCEC26C2B11DE5600AB3421 /* LaunchScreen.json */; };
+		8BCEC26F2B11DE5F00AB3421 /* RewardScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = 8BCEC26E2B11DE5F00AB3421 /* RewardScreen.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,11 +57,11 @@
 		8B56CF232B0CB957008531A6 /* ActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveView.swift; sourceTree = "<group>"; };
 		8B56CF252B0CB9D1008531A6 /* ActiveListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveListRow.swift; sourceTree = "<group>"; };
 		8B60F3862B0D70FA00F7F3B7 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		8B60F3882B0D715300F7F3B7 /* LaunchScreen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = LaunchScreen.json; path = ../../../../../../Downloads/LaunchScreen.json; sourceTree = "<group>"; };
-		8B60F38C2B0D732200F7F3B7 /* RewardScreen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = RewardScreen.json; path = ../../../../../../Downloads/RewardScreen.json; sourceTree = "<group>"; };
 		8B60F38E2B0D741600F7F3B7 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		8B60F3902B0D758700F7F3B7 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		8B9515F82B0CF3C500ECBE5C /* RewardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardScreen.swift; sourceTree = "<group>"; };
+		8BCEC26C2B11DE5600AB3421 /* LaunchScreen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LaunchScreen.json; sourceTree = "<group>"; };
+		8BCEC26E2B11DE5F00AB3421 /* RewardScreen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RewardScreen.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,9 +189,9 @@
 		8B60F3852B0D70DE00F7F3B7 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				8B60F38C2B0D732200F7F3B7 /* RewardScreen.json */,
-				8B60F3882B0D715300F7F3B7 /* LaunchScreen.json */,
 				8B60F3862B0D70FA00F7F3B7 /* LottieView.swift */,
+				8BCEC26C2B11DE5600AB3421 /* LaunchScreen.json */,
+				8BCEC26E2B11DE5F00AB3421 /* RewardScreen.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -260,10 +260,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BCEC26D2B11DE5600AB3421 /* LaunchScreen.json in Resources */,
 				8B56CEDB2B0C5947008531A6 /* Preview Assets.xcassets in Resources */,
-				8B60F3892B0D715300F7F3B7 /* LaunchScreen.json in Resources */,
+				8BCEC26F2B11DE5F00AB3421 /* RewardScreen.json in Resources */,
 				8B56CED82B0C5947008531A6 /* Assets.xcassets in Resources */,
-				8B60F38D2B0D732200F7F3B7 /* RewardScreen.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

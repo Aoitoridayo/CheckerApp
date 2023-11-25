@@ -9,6 +9,9 @@ import SwiftUI
 
 struct InputView: View {
     @State private var isInputItem = false
+    @State private var isAlert = false
+    @State private var message = ""
+    
     @State var title: String = ""
     @State var newItem = ""
     @State var items: [Item] = []
@@ -47,7 +50,14 @@ struct InputView: View {
                 }
                 ToolbarItem {
                     Button("保存") {
-                        save(Ivent(title: title, items: items))
+                        do {
+                            try check()
+                            save(Ivent(title: title, items: items))
+                        } catch {
+                            let error = error as? InputError ?? InputError.unknown
+                            self.message = error.title
+                            self.showAlert(message: self.message)
+                        }
                     }
                 }
             }
@@ -63,17 +73,41 @@ struct InputView: View {
             }
             
             Button(action: {
-                addItems()
-                self.isInputItem = false
-                self.newItem = ""
+                do {
+                    try checkItem()
+                    addItems()
+                    self.isInputItem = false
+                    self.newItem = ""
+                } catch {
+                    let error = error as? InputError ?? InputError.unknown
+                    self.message = error.title
+                    showAlert(message: message)
+                }
             }) {
                 Text("確定")
             }
         }
+        .alert(message, isPresented: $isAlert, actions: {})
     }
-    
     private func addItems() {
         self.items.append(Item(name: newItem))
+    }
+    private func check() throws {
+        if self.title == "" {
+            throw InputError.emptyTitle
+        }
+        if self.items.isEmpty {
+            throw InputError.emptyItem
+        }
+    }
+    private func checkItem() throws {
+        if self.newItem == "" {
+            throw InputError.emptyItem
+        }
+    }
+    private func showAlert(message: String) {
+        self.message = message
+        isAlert = true
     }
 }
 
