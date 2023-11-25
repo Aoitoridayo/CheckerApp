@@ -5,7 +5,7 @@
 
 # DEMO
 
-<img src="https://user-images.githubusercontent.com/108657417/218646635-bcda929e-750a-4c0b-b2cc-811003e49d01.png" width = 200 height = 420>
+<img src="https://github.com/Aoitoridayo/CheckerApp/assets/108657417/f66238aa-5505-42fc-9ce1-295831030a7d" width = 200 height = 420><img src="https://github.com/Aoitoridayo/CheckerApp/assets/108657417/3159aa8f-e7f6-408e-a28d-88f4d473d212" width = 200 height = 420><img src="https://github.com/Aoitoridayo/CheckerApp/assets/108657417/cb4347fc-2a32-420b-8a7b-21b6a04aba1c" width = 200 height = 420>
 
 
 
